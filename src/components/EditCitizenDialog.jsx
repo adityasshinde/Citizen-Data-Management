@@ -98,9 +98,9 @@ function EditCitizenDialog({ open, onClose,refresh, citizen }) {
           sx={{ width: '100%' }}
           label="Gender"
         >
-          <MenuItem value="male">Male</MenuItem>
-          <MenuItem value="female">Female</MenuItem>
-          <MenuItem value="other">Other</MenuItem>
+          <MenuItem value="male" selected={formData.gender==='male'}>Male</MenuItem>
+          <MenuItem value="female" selected={formData.gender==='female'}>Female</MenuItem>
+          <MenuItem value="other" selected={formData.gender==='other'}>Other</MenuItem>
         </Select>
       </FormControl>
         <TextField
