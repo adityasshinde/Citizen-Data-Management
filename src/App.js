@@ -12,12 +12,13 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   const dispatch = useDispatch();
-  const { data: citizens = [], isFetching, isError,refetch } = useGetCitizensQuery();
+  const { data: citizens = [],isLoading,isFetching, isError,refetch } = useGetCitizensQuery();
   useEffect(() => {
     dispatch(getCitizens());
   }, [dispatch,citizens]);
 
-  if (isFetching) return <Loader />;
+  if (isLoading) return <Loader />;
+  if (isFetching) return <Loader message='Refreshing table please wait...' />;
   if (isError) return <Alert variant='filled' severity="error">Error while loading data</Alert>;
 
   return (

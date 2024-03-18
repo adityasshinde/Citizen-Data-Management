@@ -51,7 +51,7 @@ function EditCitizenDialog({ open, onClose,refresh, citizen }) {
     const newFormData={...formData,id:citizen.id};
     const jsonData = JSON.stringify(newFormData);
     const result=await updateCitizen({updatedCitizen:jsonData,id:citizen.id});
-    toast.success('Citizen added successfully.', { position: 'top-right', autoClose: 2000});
+    toast.success('Citizen updated successfully.', { position: 'top-right', autoClose: 2000});
     onClose();
     refresh();
   };
